@@ -3,31 +3,31 @@
 
 # Алгоритм сжатия данных:
 
-# def compress_string (first_str: str):
-#     second_str = ''
-#     my_lst = [0]
-#     for i in range(1, len(first_str)):
-#         if first_str[i] != first_str[i - 1]:
-#             my_lst.append(i)
-#
-#     my_lst.append(len(first_str))
-#     for j in range(0, len(my_lst) - 1):
-#         second_str += (first_str[my_lst[j]:my_lst[j + 1]]) + ' '
-#
-#     second_str = second_str[:-1]
-#     splitting_list = second_str.split(" ")
-#     compressed_str = ''
-#     for k in range(0, len(splitting_list)):
-#         compressed_str += str(len(splitting_list[k])) + str(splitting_list[k][0])
-#     return compressed_str
-#
-#
-# with open('File_4.txt', "r") as origin_doc:
-#     original_str = origin_doc.readline()
-# print(original_str)
-# print(compress_string(original_str))
-# with open("Compress_File_4.txt", 'w') as compress_doc:
-#     compress_doc.write(compress_string(original_str))
+def compress_string (first_str: str):
+    second_str = ''
+    my_lst = [0]
+    for i in range(1, len(first_str)):
+        if first_str[i] != first_str[i - 1]:
+            my_lst.append(i)
+
+    my_lst.append(len(first_str))
+    for j in range(0, len(my_lst) - 1):
+        second_str += (first_str[my_lst[j]:my_lst[j + 1]]) + ' '
+
+    second_str = second_str[:-1]
+    splitting_list = second_str.split(" ")
+    compressed_str = ''
+    for k in range(0, len(splitting_list)):
+        compressed_str += str(len(splitting_list[k])) + str(splitting_list[k][0])
+    return compressed_str
+
+
+with open('File_4.txt', "r") as origin_doc:
+    original_str = origin_doc.readline()
+print(original_str)
+print(compress_string(original_str))
+with open("Compress_File_4.txt", 'w') as compress_doc:
+    compress_doc.write(compress_string(original_str))
 
 
 # Алгоритм восстановления данных
